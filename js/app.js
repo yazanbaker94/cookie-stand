@@ -53,6 +53,7 @@ City.prototype.render = function() {
     table.appendChild(tableData);
     table.appendChild(tableHead);
     table.appendChild(tableFoot);
+    table.appendChild(tableFoot);
 
 
     for(let i=0; i<timeOfOpeningHours.length; i++) {
