@@ -1,26 +1,30 @@
 'use strict';
 
 let timeOfOpeningHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-let Seattle={
-  cityName : 'Seattle',
-  minCustomer : 23,
-  maxCustomer : 65,
-  avgCookie : 6.3,
-  resultEmptyArray : [],
-  totalCookies : 0,
 
-  customersPerHour: function(min, max) {
+
+function City(cityName, minCustomer, maxCustomer, avgCookie, totalCookies) {
+  this.cityName = cityName;
+  this.minCustomer = minCustomer;
+  this.maxCustomer = maxCustomer;
+  this.avgCookie = avgCookie;
+  this.resultEmptyArray = [];
+  this.totalCookies = 0;
+}
+
+
+let Seattle= new City('Seattle', 23, 65, 6.3);
+
+City.prototype.customersPerHour = function(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
-  },
+  };
 
-  cookiesPurchasedPerHour: function() {
+City.prototype.cookiesPurchasedPerHour = function() {
     return Math.floor(this.customersPerHour(this.minCustomer, this.maxCustomer) * this.avgCookie);
 
-  },
+  };
 
- 
-
-  endResults : function() {
+  City.prototype.endResults = function() {
     for(let i=0; i<timeOfOpeningHours.length;i++){
     this.resultEmptyArray.push(this.cookiesPurchasedPerHour());
     this.totalCookies = this.resultEmptyArray[i] + this.totalCookies;
@@ -28,32 +32,53 @@ let Seattle={
 
   }
 
-  },
+  };
 
 
   
-  render : function() {
-    let endResults = document.getElementById('title');
-    let h1=document.createElement('h1');
-    let unorderedList=document.createElement('ul');
-    endResults.appendChild(h1);
-    endResults.appendChild(unorderedList);
-    h1.innerText = this.cityName;
+City.prototype.render = function() {
+    let tableId = document.getElementById("myTable");
+    let table = document.createElement("TABLE");
+    let tableBody = document.createElement("TBODY");
+    let tableHeader = document.createElement("TH");
+    let tableData = document.createElement("TD");
+    
+    let tableHead = document.createElement("THEAD");
+    let tableFoot = document.createElement("TFOOT");
+
+
+    tableId.appendChild(table);
+    table.appendChild(tableBody);
+    table.appendChild(tableHeader);
+    table.appendChild(tableData);
+    table.appendChild(tableHead);
+    table.appendChild(tableFoot);
 
 
     for(let i=0; i<timeOfOpeningHours.length; i++) {
-    let showResult = document.createElement('li'); 
-    showResult.innerText = timeOfOpeningHours[i] + ' : ' + this.resultEmptyArray[i] + ' cookies';
-    unorderedList.appendChild(showResult);
-     
+    let tableHead = document.createElement('th'); 
+    tableHead.innerText = timeOfOpeningHours[i];
+    tableData.appendChild(tableHead);
     }
 
-    let showTotalResult = document.createElement('li'); 
+    for(let i=0; i<timeOfOpeningHours.length; i++) {
+      let tableHead = document.createElement('td'); 
+      tableHead.innerText = this.resultEmptyArray[i];
+      tableBody.appendChild(tableHead);
+      }
+
+
+    let tableRow = document.createElement('tr'); 
+    tableRow.innerText = this.cityName;
+    tableData.appendChild(tableRow);
+
+    
+    let showTotalResult = document.createElement('th'); 
     showTotalResult.innerText = "Total: " + this.totalCookies + ' cookies';
     unorderedList.appendChild(showTotalResult);
   }
 
-};
+
 
 Seattle.endResults();
 Seattle.render();
