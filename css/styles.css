@@ -44,3 +44,12 @@ li {
     margin-left: auto;
     margin-right: auto 
   }
+
+
+  table, th, tr, td {
+      border: 2px solid black;
+  }
+
+  table {
+      border-collapse: collapse;
+  }
