@@ -53,3 +53,9 @@ li {
   table {
       border-collapse: collapse;
   }
+
+
+  fieldset {
+
+    color: black;
+  }
