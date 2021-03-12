@@ -11,7 +11,32 @@
 
 </head>
 <body>
+    <form id='addList'>
+        <fieldset>
+        <legend>Add location to list: </legend>
 
+        <label for='locationList'>New city: </label>
+        <input type="text" name='city' placeholder="Enter New Location" required>
+        <br>
+
+        <label for='minCustomer'>Minimum amount of customers: </label>
+        <input type="number" name='min' placeholder="Enter minimum amount of customer: " min="1" max="50">
+        <br>
+
+        <label for='maxCustomer'>Maximum amount of customers: </label>
+        <input type="number" name='max' placeholder="Enter maximum amount of customers" min="1" max="50">
+        <br>
+        
+        <label for='avgCookie'>Average amount of cookie: </label>
+        <input type="number" name='avg' placeholder="Enter amount of average cookies: " min="1" max="50">
+
+    </fieldset>
+
+    <input type="submit" value='Create'>
+
+ <br> <br> <br>
+
+    </form>
     <table id="table"></table>
     <section id="title"></section>
 

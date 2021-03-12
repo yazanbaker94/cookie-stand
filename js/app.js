@@ -12,6 +12,8 @@ function City(cityName, minCustomer, maxCustomer, avgCookie) {
   this.totalCookiesPerDay = 0;
 
 }
+
+
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -97,14 +99,14 @@ City.prototype.cookiesPurchasedPerHour = function() {
     emptyHeader.appendChild(dailyLocationTotal);
 
   }
-
+  let objectRowX = document.createElement('tr');
+  let objectDataX = document.createElement('th');
 function makeFooter() {
 
-  let objectRow = document.createElement('tr');
-  let objectData = document.createElement('th');
-  objectData.textContent = 'Totals';
-  objectRow.appendChild(objectData);
-  table.appendChild(objectRow);
+  
+  objectDataX.textContent = 'Totals';
+  objectRowX.appendChild(objectDataX);
+  table.appendChild(objectRowX);
 
  
 
@@ -124,14 +126,14 @@ function makeFooter() {
     let hourlyTotalTh = document.createElement('th');
     hourlyTotalTh.textContent = hourlyTotal;
     table.appendChild(hourlyTotalFooter);
-    objectRow.appendChild(hourlyTotalTh);
+    objectRowX.appendChild(hourlyTotalTh);
   }
 
   let masterTotalRow = document.createElement('thead');
   let masterTotalData = document.createElement('th');
   masterTotalData.textContent = masterTotal;
   table.appendChild(masterTotalRow);
-  objectRow.appendChild(masterTotalData);
+  objectRowX.appendChild(masterTotalData);
 
 
    
@@ -144,6 +146,55 @@ function makeFooter() {
   for(let i=0; i<locationList.length; i++){
     locationList[i].render();
   }
+
+  let form = document.getElementById('addList');
+
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+
+
+    let city = event.target.city.value;
+    let min = parseInt(event.target.min.value);
+    let max = parseInt(event.target.max.value);
+    let avg = parseInt(event.target.avg.value);
+
+    if(city) {
+      this.cityName = city;
+  } else if (min) {
+    this.minCustomer = min;
+  }else if (max) {
+    this.maxCustomer = max;
+  }else if (avg) {
+    this.avgCookie = avg;
+  }
+
+  let NewCity = new City(city, min, max, avg);
+  locationList.push(NewCity);
+  
+  NewCity.render();
+  table.removeChild(objectRowX);
+  objectRowX.textContent='';
+  makeFooter();
+  
+ 
+}
+  )
+
+  console.log(locationList);
+
+
+
+  
+  
+  
+
+
+
+
+
+
 
   makeHeaderRow();
   makeFooter();
