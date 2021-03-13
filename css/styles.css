@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&family=Shippori+Mincho+B1&display=swap');
+
+
+html {
+    background-color:rgba(134, 136, 238, 0.267); 
+    
+}
+body {
+  overflow-x: hidden; /* Hide scrollbars */ }
+
+main nav ul li {
+    
+    list-style-type: none;
+    display: inline-block;
+    margin-left: 250px;
+    font-size: 20px;
+    
+}
+a { color: inherit; } 
+
+h1 {
+    margin: auto;
+    padding-top: 50px;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Ranchers', cursive;
+    
+}
+
+
+h2 {
+  margin: auto;
+  padding-top: 50px;
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Shippori Mincho B1', serif;
+  
+}
+
+h6 {
+    text-align: center;
+    float: left;
+    position: relative;
+    left: 100px;
+    margin-left: 180px;
+
+
+}
+
+
+
+
+
+
+#salmon{
+
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+  position:relative;
+  bottom: 60px;
+  left: 240px;
+}
+
+#fish{
+
+  border-radius: 4px;
+  padding: 5px;
+  width: 50px;
+  position:relative;
+  bottom: 60px;
+  left: 800px;
+}
+
+#fam{
+  position: relative;
+  width: 500px;
+
+  left: 400px;
+}
+
+h4{
+  display: inline-block;
+  text-align: center;
+  float: left;
+}
+#locations{
+  position: relative;
+  left: 500px;
+
+}
+
+
+
+#button {
+  background-color: #4CAF50; /* Green */
+  border: solid;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+}
+#button:hover {
+  background-color: #c8e03c; /* Green */
+  color: white;
+}
+  table, th, tr, td {
+      border: 2px solid black;
+      background-color: rgb(226, 214, 43);
+  }
+
+  td {
+    background-color: rgb(43, 226, 217);
+  }
+
+  table {
+      border-collapse: collapse;
+  }
+
+
+  fieldset {
+
+    color: black;
+  }
+
+  input:invalid {
+    border: 2px dashed red;
+  }
+  
+  input:invalid:required {
+    background-image: linear-gradient(to right, pink, lightgreen);
+  }
+  
+  input:valid {
+    border: 2px solid black;
+  }
+
+
+  hr{
+    border-top: 1px dotted black;
+    width: 60%;
+}
+
+
+#items {
+  position: relative;
+  left: 170px;
+  
+}
+
+
