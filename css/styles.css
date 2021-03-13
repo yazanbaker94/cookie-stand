@@ -1,49 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&family=Shippori+Mincho+B1&display=swap');
+
+
 html {
-    background-color:beige;
+    background-color:rgba(134, 136, 238, 0.267); 
+    
 }
+body {
+  overflow-x: hidden; /* Hide scrollbars */ }
 
-
-ul {
-    display: inline;
+main nav ul li {
+    
     list-style-type: none;
-    
+    display: inline-block;
+    margin-left: 250px;
+    font-size: 20px;
     
 }
+a { color: inherit; } 
 
 h1 {
     margin: auto;
     padding-top: 50px;
     text-align: center;
     font-size: 50px;
+    font-family: 'Ranchers', cursive;
+    
+}
+
+
+h2 {
+  margin: auto;
+  padding-top: 50px;
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Shippori Mincho B1', serif;
+  
 }
 
 h6 {
     text-align: center;
-
-
-}
-
-
-
-}
-li {
     float: left;
-    padding-left: 240px;
-    font-size: 30px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    
-
-    
-  }
+    position: relative;
+    left: 100px;
+    margin-left: 180px;
 
 
-  img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto 
-  }
+}
+
+
+
+
+
+
+#salmon{
+
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+  position:relative;
+  bottom: 60px;
+  left: 240px;
+}
+
+#fish{
+
+  border-radius: 4px;
+  padding: 5px;
+  width: 50px;
+  position:relative;
+  bottom: 60px;
+  left: 800px;
+}
+
+#fam{
+  position: relative;
+  width: 500px;
+
+  left: 400px;
+}
+
+h4{
+  display: inline-block;
+  text-align: center;
+  float: left;
+}
+#locations{
+  position: relative;
+  left: 500px;
+
+}
+
+
 
 
   table, th, tr, td {
@@ -71,3 +118,18 @@ li {
   input:valid {
     border: 2px solid black;
   }
+
+
+  hr{
+    border-top: 1px dotted black;
+    width: 60%;
+}
+
+
+#items {
+  position: relative;
+  left: 170px;
+  
+}
+
+
